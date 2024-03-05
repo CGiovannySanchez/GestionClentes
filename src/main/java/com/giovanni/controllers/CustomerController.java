@@ -2,6 +2,8 @@ package com.giovanni.controllers;
 
 import com.giovanni.entities.Customer;
 import com.giovanni.services.ICustomerService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,7 +23,7 @@ public class CustomerController {
     }
 
     @GetMapping("/findAll")
-    public List<Customer> finAll(){
+    public List<Customer> findAll(){
         return iCustomerService.findAll();
     }
 }

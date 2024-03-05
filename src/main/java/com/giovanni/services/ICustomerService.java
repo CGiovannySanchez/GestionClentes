@@ -2,10 +2,12 @@ package com.giovanni.services;
 
 import com.giovanni.entities.Customer;
 
+import java.util.List;
+
 public interface ICustomerService {
 
     Customer save(Customer customer);
-    Iterable<Customer> findAll();
+    List<Customer> findAll();
     Customer findById(Integer Id);
 
     void deleteById(Integer id);
