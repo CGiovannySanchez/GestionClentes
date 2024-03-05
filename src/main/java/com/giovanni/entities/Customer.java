@@ -16,13 +16,13 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "NOMBRE", nullable = false)
+    @Column(name = "NOMBRE")
     private String name;
 
-    @Column(name = "APELLIDO", nullable = false)
+    @Column(name = "APELLIDO")
     private String lastName;
 
-    @Column(name = "EMAIL",nullable = false)
+    @Column(name = "EMAIL")
     private String email;
 }
 
