@@ -8,8 +8,10 @@ public interface ICustomerService {
 
     Customer save(Customer customer);
     List<Customer> findAll();
-    Customer findById(Integer Id);
+    Customer findById(Integer id);
 
     void deleteById(Integer id);
+
     Customer update(Customer customer);
+
 }

@@ -1,8 +1,8 @@
 package com.giovanni.services;
 
 import com.giovanni.entities.Customer;
+import com.giovanni.exceptions.ResourcesNotFoundException;
 import com.giovanni.repositories.CustomerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,17 +27,26 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     @Override
-    public Customer findById(Integer Id) {
-        return null;
+    public Customer findById(Integer id) {
+        Customer customer = customerRepository.findById(id).orElseThrow(
+                () ->{
+                    throw new ResourcesNotFoundException("Customer con Id " + id + " No se encuentra ") ;
+                }
+        );
+        //return customerRepository.findById(id).get();
+        return customer;
     }
 
     @Override
     public void deleteById(Integer id) {
+        customerRepository.deleteById(id);
 
     }
 
     @Override
     public Customer update(Customer customer) {
-        return null;
+        return customerRepository.save(customer);
     }
+
+
 }
